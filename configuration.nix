@@ -2,6 +2,7 @@
 let
     user = "karel";
     fullName = "Karel Schwab";
+    email = "schwabk9@protonmail.com";
     hostname = "nixos";
 in {
     imports = [
@@ -54,7 +55,7 @@ in {
                 layout = "za";
             };
             displayManager = {
-                lightdm = {
+                gdm = {
                     enable = true;
                 };
             };
@@ -140,8 +141,8 @@ in {
         enable = true;
         config = {
             user = {
-                email = "schwabk9@protonmail.com";
-                name = "Karel Schwab";
+                email = "${email}";
+                name = "${fullName}";
             };
         };
     };
