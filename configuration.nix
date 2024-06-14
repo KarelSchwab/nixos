@@ -73,6 +73,7 @@ in {
                     pavucontrol
                     alsa-utils
                     playerctl
+                    dunst
                 ];
             };
         };
@@ -137,6 +138,12 @@ in {
 
     programs.git = {
         enable = true;
+        config = {
+            user = {
+                email = "schwabk9@protonmail.com";
+                name = "Karel Schwab";
+            };
+        };
     };
 
     programs.tmux = {
