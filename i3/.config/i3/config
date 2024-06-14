@@ -73,14 +73,13 @@ bindsym Mod4+b exec /run/current-system/sw/bin/brave
 bindsym Mod4+d exec /run/current-system/sw/bin/dmenu_run
 bindsym Mod4+t exec /run/current-system/sw/bin/alacritty
 
-# TODO: fix
-bindsym XF86AudioLowerVolume exec amixer set Master 10%-
+bindsym XF86AudioLowerVolume exec volume down
 bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86AudioRaiseVolume exec amixer set Master 10%+
+bindsym XF86AudioRaiseVolume exec volume up
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 bindsym XF86MonBrightnessUp exec brightnessctl set 10%+
 

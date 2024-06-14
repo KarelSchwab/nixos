@@ -75,6 +75,7 @@ in {
                     alsa-utils
                     playerctl
                     dunst
+                    shellcheck
                 ];
             };
         };
@@ -135,6 +136,7 @@ in {
         spotify
         brave
         filezilla
+        bash
     ];
 
     programs.git = {
@@ -203,17 +205,11 @@ in {
             extraGroups = [ "networkmanager" "wheel" "docker" ];
             initialHashedPassword = "$y$j9T$C99/JcjThi8GUBUa2uqr0/$ckEMxV9Fz/OupvSsbx7sTDwLch3buTjLKoR8TjBCDF9";
             packages = with pkgs; [ 
-                # TODO: Make this better
                 (pkgs.writeShellScriptBin "s" ''
-                    session=$(find ~ ~/.config ~/Projects -mindepth 1 -maxdepth 1 -type d | fzf)
-
-                    session_name=$(basename "$session" | tr . _)
-
-                    if ! tmux has-session -t "$session_name" 2> /dev/null ; then
-                        tmux new-session -s "$session_name" -c "$session" -d
-                    fi
-
-                    tmux switch-client -t "$session_name"
+                    ${pkgs.stdenv.shell} ~/.local/bin/tmux-sessionizer.sh "$@"
+                '')
+                (pkgs.writeScriptBin "volume" ''
+                    ${pkgs.stdenv.shell} ~/.local/bin/volume.sh "$@"
                 '')
             ];
         };
