@@ -70,7 +70,7 @@ bindsym Mod4+e layout split
 bindsym Mod4+w layout tabbed
 
 bindsym Mod4+b exec /run/current-system/sw/bin/brave
-bindsym Mod4+d exec /run/current-system/sw/bin/dmenu
+bindsym Mod4+d exec /run/current-system/sw/bin/dmenu_run
 bindsym Mod4+t exec /run/current-system/sw/bin/alacritty
 
 # TODO: fix
