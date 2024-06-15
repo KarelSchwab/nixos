@@ -64,6 +64,7 @@ bindsym Mod4+Shift+space floating toggle
 bindsym Mod4+m fullscreen toggle
 bindsym Mod4+q kill
 bindsym Mod4+r mode resize
+bindsym Mod4+x mode system
 
 bindsym Mod4+s layout stacking
 bindsym Mod4+e layout split
@@ -84,18 +85,24 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 bindsym XF86MonBrightnessUp exec brightnessctl set 10%+
 
 mode "resize" {
-  bindsym Escape mode default
-  bindsym h resize shrink width 10 px or 10 ppt
-  bindsym j resize grow height 10 px or 10 ppt
-  bindsym k resize shrink height 10 px or 10 ppt
-  bindsym l resize grow width 10 px or 10 ppt
+    bindsym Escape mode default
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 pxror 10 ppt
+}
+
+mode "system" {
+    bindsym Escape mode default
+    bindsym l exec i3lock
+    bindsym s exec shutdown no
 }
 
 bar {
-  font pango:monospace 8.000000
-  position top
-  status_command i3status
-  i3bar_command i3bar
+    font pango:monospace 8.000000
+    position top
+    status_command i3status
+    i3bar_command i3bar
 }
 
 exec i3-msg workspace 1
