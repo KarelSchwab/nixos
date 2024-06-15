@@ -75,7 +75,7 @@ in {
                     alsa-utils
                     playerctl
                     dunst
-                    shellcheck
+                    libnotify
                 ];
             };
         };
@@ -130,6 +130,7 @@ in {
         gh
         gcc
         direnv
+        shellcheck
 
         # Applications
         alacritty

@@ -69,9 +69,9 @@ bindsym Mod4+s layout stacking
 bindsym Mod4+e layout split
 bindsym Mod4+w layout tabbed
 
-bindsym Mod4+b exec /run/current-system/sw/bin/brave
-bindsym Mod4+d exec /run/current-system/sw/bin/dmenu_run
-bindsym Mod4+t exec /run/current-system/sw/bin/alacritty
+bindsym Mod4+b exec brave
+bindsym Mod4+d exec dmenu_run
+bindsym Mod4+t exec alacritty
 
 bindsym XF86AudioLowerVolume exec volume down
 bindsym XF86AudioMute exec amixer set Master toggle
@@ -94,8 +94,8 @@ mode "resize" {
 bar {
   font pango:monospace 8.000000
   position top
-  status_command /run/current-system/sw/bin/i3status
-  i3bar_command /run/current-system/sw/bin/i3bar
+  status_command i3status
+  i3bar_command i3bar
 }
 
-exec /run/current-system/sw/bin/i3-msg workspace 1
+exec i3-msg workspace 1
