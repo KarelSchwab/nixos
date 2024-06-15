@@ -76,6 +76,8 @@ in {
                     playerctl
                     dunst
                     libnotify
+
+                    base16-schemes
                 ];
             };
         };
@@ -214,6 +216,13 @@ in {
                 '')
             ];
         };
+    };
+
+    stylix = {
+        enable = true;
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+        image = ./wallpapers/wallpaper.png;
+        targets.feh.enable = true;
     };
 
     # This value determines the NixOS release from which the default
