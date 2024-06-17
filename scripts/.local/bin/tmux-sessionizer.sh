@@ -1,4 +1,4 @@
-#!/run/current-system/sw/bin/bash
+#!/usr/bin/env bash
 
 session=$(find ~ ~/.config ~/Projects -mindepth 1 -maxdepth 1 -type d | fzf)
 

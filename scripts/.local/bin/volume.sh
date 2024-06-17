@@ -1,4 +1,4 @@
-#!/run/current-system/sw/bin/bash
+#!/usr/bin/env bash
 
 function send_notification {
     volume=$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')
