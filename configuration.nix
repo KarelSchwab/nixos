@@ -291,6 +291,9 @@ in {
                 (pkgs.writeScriptBin "volume" ''
                     ${pkgs.stdenv.shell} ~/.local/bin/volume.sh "$@"
                 '')
+                (pkgs.writeScriptBin "dev-env" ''
+                    ${pkgs.stdenv.shell} ~/.local/bin/dev-env.sh "$@"
+                '')
             ];
         };
     };
