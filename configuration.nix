@@ -63,7 +63,6 @@ in {
                 enable = true;
                 extraPackages = with pkgs; [
                     i3lock
-                    #i3status
                     i3blocks
                     dmenu
                     brightnessctl
@@ -77,9 +76,7 @@ in {
                     dunst
                     libnotify
 
-                    polybar
                     base16-schemes
-                    # iw
                 ];
             };
         };

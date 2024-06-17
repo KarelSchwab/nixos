@@ -19,6 +19,19 @@
 # short_text
 # signal
 # urgent
+#
+# Color scheme
+#
+# bg #282828
+# red #cc241d
+# green #98971a
+# yellow #d79921
+# orange #d65d0e
+# blue #458588
+# purple #b16286
+# aqua #689d68
+# gray #a89984
+# darkgray #1d2021
 
 # Global properties
 #
@@ -26,22 +39,9 @@
 # Each block command defaults to the script name to avoid boilerplate.
 # Change $SCRIPT_DIR to the location of your scripts!
 command=$SCRIPT_DIR/$BLOCK_NAME
-separator_block_width=15
+separator_block_width=10
+separator=false
 markup=pango
-
-# Volume indicator
-#
-# The first parameter sets the step (and units to display)
-# The second parameter overrides the mixer selection
-# See the script for details.
-
-[volume]
-#command=$SCRIPT_DIR/volume/volume
-label=♪ 
-#label=VOL
-interval=once
-signal=10
-#STEP=5%
 
 # Generic media player support
 #
@@ -49,12 +49,19 @@ signal=10
 # Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
 # Set to %any to automatically pick (Requires playerctl >=2.1.1)
 [mediaplayer]
-# This picks any player, with vlc as first, and spotify as last choice
 command=$SCRIPT_DIR/mediaplayer/mediaplayer
-label= 
+color=#458588
+# This picks any player, with vlc as first, and spotify as last choice
 instance=vlc,%any,spotify
 interval=5
 signal=10
+
+########################
+[spacer]
+separator_block_width=10
+full_text=
+color=#b16286
+########################
 
 # Network interface monitoring
 #
@@ -63,15 +70,20 @@ signal=10
 [iface]
 command=$SCRIPT_DIR/iface/iface
 IFACE=wlp7s0
-label=
-color=#00FF00
+color=#689d68
 interval=10
 separator=false
+
+########################
+[spacer]
+separator_block_width=10
+full_text=
+color=#b16286
+########################
 
 [wifi]
 #command=$SCRIPT_DIR/wifi/wifi
 INTERFACE=wlp7s0
-label=wifi:
 interval=10
 separator=false
 
@@ -85,35 +97,38 @@ interval=5
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 command=$SCRIPT_DIR/memory/memory
-label=MEM 
+color=#cc241d
 separator=false
 interval=30
 
-# CPU usage
-#
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
-[cpu_usage]
-command=$SCRIPT_DIR/cpu_usage/cpu_usage
-label=CPU
-interval=10
-min_width=CPU 100.00%
-#separator=false
+########################
+[spacer]
+separator_block_width=10
+full_text=
+color=#b16286
+########################
 
 # Battery indicator
 #
 # The battery instance defaults to 0.
 [battery]
 command=$SCRIPT_DIR/battery/battery
-label=󰁹 
-#label=⚡
+label=󰂂 
+color=#d79921
 interval=30
+
+########################
+[spacer]
+separator_block_width=10
+full_text=
+color=#b16286
+########################
 
 # Date Time
 #
 [time]
 command=date '+%Y-%m-%d %H:%M'
-label=󰥔 
+color=#98971a
 interval=5
 
 

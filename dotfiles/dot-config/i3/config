@@ -1,19 +1,12 @@
 font pango:monospace 8.000000
 
-default_border pixel 4
-default_floating_border normal 2
+default_border pixel 2
+default_floating_border normal 1
 
 focus_follows_mouse yes
 focus_on_window_activation smart
 
 workspace_layout default
-
-client.focused #4c7899 #285577 #ffffff #2e9ef4 #285577
-client.focused_inactive #333333 #5f676a #ffffff #484e50 #5f676a
-client.unfocused #333333 #222222 #888888 #292d2e #222222
-client.urgent #2f343a #900000 #ffffff #900000 #900000
-client.placeholder #000000 #0c0c0c #ffffff #000000 #0c0c0c
-client.background #ffffff
 
 gaps inner 5
 gaps outer 2
@@ -98,19 +91,40 @@ mode "system" {
     bindsym s exec shutdown no
 }
 
+# set primary gruvbox colorscheme colors
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $orange #d65d0e
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+
 bar {
-    font pango:Cascadia Mono 10
+    font pango:Cascadia Mono 12
     position top
     status_command SCRIPT_DIR=~/i3blocks-contrib i3blocks
     i3bar_command i3bar
+    separator_symbol "<200b>"
 
     tray_output primary
 
     colors {
-        background #282A2E
+        background $bg
+
+        focused_workspace    $yellow $yellow $darkgray
+        inactive_workspace   $darkgray $darkgray $yellow
+        active_workspace     $darkgray $darkgray $yellow
+        urgent_workspace     $red $red $bg
     }
 }
 
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+client.focused          $yellow $yellow $darkgray $yellow 
+client.focused_inactive $darkgray $darkgray $darkgray $darkgray
+client.unfocused        $darkgray $darkgray $yellow $darkgray
+client.urgent           $red $red $white $red $red
 
 exec i3-msg workspace 1
