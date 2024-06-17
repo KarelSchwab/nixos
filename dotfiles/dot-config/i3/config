@@ -68,6 +68,7 @@ bindsym Mod4+b exec brave
 bindsym Mod4+d exec rofi -show drun
 bindsym Mod4+t exec alacritty
 bindsym Mod4+f exec nemo
+bindsym Mod1+Tab exec rofi -show window
 
 bindsym XF86AudioLowerVolume exec volume down
 bindsym XF86AudioMute exec amixer set Master toggle
@@ -84,7 +85,7 @@ mode "resize" {
     bindsym h resize shrink width 10 px or 10 ppt
     bindsym j resize grow height 10 px or 10 ppt
     bindsym k resize shrink height 10 px or 10 ppt
-    bindsym l resize grow width 10 pxror 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
 }
 
 mode "system" {

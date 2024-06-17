@@ -7,6 +7,7 @@ configuration {
     display-run:    "󱓞 run:";
     display-drun:   "󰣖 drun:";
     display-window: "󱂬 window:";
+    display-windowcd: "󱂬 windowcd:";
     display-combi:  "󰕘 combi:";
     display-filebrowser: "󰉋 filebrowser:";
 
