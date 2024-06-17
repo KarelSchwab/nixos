@@ -64,8 +64,10 @@ bindsym Mod4+e layout split
 bindsym Mod4+w layout tabbed
 
 bindsym Mod4+b exec brave
-bindsym Mod4+d exec dmenu_run
+# bindsym Mod4+d exec dmenu_run
+bindsym Mod4+d exec rofi -show drun
 bindsym Mod4+t exec alacritty
+bindsym Mod4+f exec nemo
 
 bindsym XF86AudioLowerVolume exec volume down
 bindsym XF86AudioMute exec amixer set Master toggle
@@ -106,7 +108,7 @@ set $darkgray #1d2021
 bar {
     font pango:Cascadia Mono 12
     position top
-    status_command SCRIPT_DIR=~/i3blocks-contrib i3blocks
+    status_command i3blocks
     i3bar_command i3bar
     separator_symbol "<200b>"
 

@@ -75,7 +75,7 @@ in {
                     playerctl
                     dunst
                     libnotify
-
+                    rofi
                     base16-schemes
                 ];
             };
@@ -132,6 +132,8 @@ in {
         gcc
         direnv
         shellcheck
+        acpi
+        sysstat
 
         # Applications
         alacritty
@@ -139,9 +141,12 @@ in {
         brave
         filezilla
         bash
+        vlc
+        gimp
 
-        acpi
-        sysstat
+        cinnamon.nemo
+        cinnamon.pix
+        cinnamon.xreader
     ];
 
     fonts = {
@@ -295,6 +300,7 @@ in {
         base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
         image = ./wallpapers/wallpaper.png;
         targets.feh.enable = true;
+        polarity = "dark";
     };
 
     # This value determines the NixOS release from which the default
