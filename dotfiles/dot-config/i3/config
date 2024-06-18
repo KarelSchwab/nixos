@@ -67,7 +67,7 @@ bindsym Mod4+b exec brave
 # bindsym Mod4+d exec dmenu_run
 bindsym Mod4+d exec rofi -show drun
 bindsym Mod4+t exec alacritty
-bindsym Mod4+f exec nemo
+bindsym Mod4+f exec nautilus
 bindsym Mod1+Tab exec rofi -show window
 
 bindsym XF86AudioLowerVolume exec volume down

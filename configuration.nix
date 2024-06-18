@@ -144,9 +144,13 @@ in {
         vlc
         gimp
 
-        cinnamon.nemo
-        cinnamon.pix
+        # cinnamon.nemo
+        # cinnamon.pix
         cinnamon.xreader
+        gnome.nautilus
+        gnome.gnome-calculator
+        gnome.eog
+
     ];
 
     fonts = {
