@@ -1,0 +1,133 @@
+font pango:monospace 8.000000
+
+default_border pixel 2
+default_floating_border normal 1
+
+focus_follows_mouse yes
+focus_on_window_activation smart
+
+workspace_layout default
+
+gaps inner 5
+gaps outer 2
+
+# Keybindings
+bindsym Mod4+0 workspace number 10
+bindsym Mod4+1 workspace number 1
+bindsym Mod4+2 workspace number 2
+bindsym Mod4+3 workspace number 3
+bindsym Mod4+4 workspace number 4
+bindsym Mod4+5 workspace number 5
+bindsym Mod4+6 workspace number 6
+bindsym Mod4+7 workspace number 7
+bindsym Mod4+8 workspace number 8
+bindsym Mod4+9 workspace number 9
+
+bindsym Mod4+Shift+0 move container to workspace number 10
+bindsym Mod4+Shift+1 move container to workspace number 1
+bindsym Mod4+Shift+2 move container to workspace number 2
+bindsym Mod4+Shift+3 move container to workspace number 3
+bindsym Mod4+Shift+4 move container to workspace number 4
+bindsym Mod4+Shift+5 move container to workspace number 5
+bindsym Mod4+Shift+6 move container to workspace number 6
+bindsym Mod4+Shift+7 move container to workspace number 7
+bindsym Mod4+Shift+8 move container to workspace number 8
+bindsym Mod4+Shift+9 move container to workspace number 9
+
+bindsym Mod4+Up focus up
+bindsym Mod4+Down focus down
+bindsym Mod4+Left focus left
+bindsym Mod4+Right focus right
+
+bindsym Mod4+h focus left
+bindsym Mod4+j focus down
+bindsym Mod4+k focus up
+bindsym Mod4+l focus right
+
+bindsym Mod4+Shift+h move left
+bindsym Mod4+Shift+j move down
+bindsym Mod4+Shift+k move up
+bindsym Mod4+Shift+l move right
+
+bindsym Mod4+Shift+r restart
+bindsym Mod4+Shift+c reload
+
+bindsym Mod4+Shift+space floating toggle
+
+bindsym Mod4+m fullscreen toggle
+bindsym Mod4+q kill
+bindsym Mod4+r mode resize
+bindsym Mod4+x mode system
+
+bindsym Mod4+s layout stacking
+bindsym Mod4+e layout split
+bindsym Mod4+w layout tabbed
+
+bindsym Mod4+b exec brave
+# bindsym Mod4+d exec dmenu_run
+bindsym Mod4+d exec rofi -show drun
+bindsym Mod4+t exec alacritty
+bindsym Mod4+f exec nautilus
+bindsym Mod1+Tab exec rofi -show window
+
+bindsym XF86AudioLowerVolume exec volume down
+bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioRaiseVolume exec volume up
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 10%+
+
+mode "resize" {
+    bindsym Escape mode default
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+}
+
+mode "system" {
+    bindsym Escape mode default
+    bindsym l exec i3lock
+    bindsym s exec shutdown no
+}
+
+# set primary gruvbox colorscheme colors
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $orange #d65d0e
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+
+bar {
+    font pango:Cascadia Mono 12
+    position top
+    status_command i3blocks
+    i3bar_command i3bar
+    separator_symbol "<200b>"
+
+    tray_output primary
+
+    colors {
+        background $bg
+
+        focused_workspace    $yellow $yellow $darkgray
+        inactive_workspace   $darkgray $darkgray $yellow
+        active_workspace     $darkgray $darkgray $yellow
+        urgent_workspace     $red $red $bg
+    }
+}
+
+client.focused          $yellow $yellow $darkgray $yellow 
+client.focused_inactive $darkgray $darkgray $darkgray $darkgray
+client.unfocused        $darkgray $darkgray $yellow $darkgray
+client.urgent           $red $red $white $red $red
+
+exec i3-msg workspace 1

@@ -1,0 +1,78 @@
+# Global properties
+separator_block_width=10
+separator=false
+markup=pango
+
+# Generic media player support
+#
+# This displays "ARTIST - SONG" if a music is playing.
+# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
+# Set to %any to automatically pick (Requires playerctl >=2.1.1)
+[mediaplayer]
+command=~/.local/bin/i3blocks/mediaplayer
+color=#458588
+# This picks any player, with vlc as first, and spotify as last choice
+instance=vlc,%any,spotify
+interval=5
+signal=10
+
+########################
+[spacer]
+separator_block_width=10
+full_text=
+color=#b16286
+########################
+
+# IP Address
+#
+[ip_address]
+command=~/.local/bin/i3blocks/network.sh
+IFACE=wlp7s0
+color=#689d68
+interval=10
+separator=false
+
+########################
+[spacer]
+separator_block_width=10
+full_text=
+color=#b16286
+########################
+
+# Memory usage
+#
+[memory]
+command=~/.local/bin/i3blocks/memory.sh
+color=#cc241d
+separator=false
+interval=30
+
+########################
+[spacer]
+separator_block_width=10
+full_text=
+color=#b16286
+########################
+
+# Battery percentage
+#
+[battery]
+command=~/.local/bin/i3blocks/battery.sh
+label=󰂂 
+color=#d79921
+interval=30
+
+########################
+[spacer]
+separator_block_width=10
+full_text=
+color=#b16286
+########################
+
+# Date Time
+#
+[time]
+command=~/.local/bin/i3blocks/date_time.sh
+color=#98971a
+interval=5
+
