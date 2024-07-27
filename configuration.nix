@@ -127,6 +127,7 @@ in {
         stow
 
         # Programming
+        python311Full
         nodejs_latest
         gh
         gcc
@@ -144,13 +145,10 @@ in {
         vlc
         gimp
 
-        # cinnamon.nemo
-        # cinnamon.pix
         cinnamon.xreader
-        gnome.nautilus
-        gnome.gnome-calculator
-        gnome.eog
-
+        nautilus
+        gnome-calculator
+        eog
     ];
 
     fonts = {
@@ -297,9 +295,6 @@ in {
                 '')
                 (pkgs.writeScriptBin "volume" ''
                     ${pkgs.stdenv.shell} ~/.local/bin/volume.sh "$@"
-                '')
-                (pkgs.writeScriptBin "dev-env" ''
-                    ${pkgs.stdenv.shell} ~/.local/bin/dev-env.sh "$@"
                 '')
             ];
         };

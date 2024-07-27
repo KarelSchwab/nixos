@@ -1,0 +1,8 @@
+let mapleader=" "
+
+set incsearch
+set nu
+set scrolloff=5
+
+map jk <Esc>
+imap jk <Esc>
